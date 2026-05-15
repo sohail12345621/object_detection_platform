@@ -1,0 +1,31 @@
+fastapi==0.111.0
+uvicorn==0.29.0
+python-multipart==0.0.9
+sqlalchemy==2.0.30
+alembic==1.13.1
+pydantic==2.7.1
+pydantic-settings==2.2.1
+
+# AI / ML
+ultralytics==8.2.15
+supervision==0.20.0
+opencv-python-headless==4.9.0.80
+torch==2.3.0
+torchvision==0.18.0
+filterpy==1.4.5 # Often needed for SORT-based trackers
+lapx==0.5.5 # Needed for ByteTrack
+cython==3.0.10
+
+# Frontend
+streamlit==1.34.0
+streamlit-webrtc==0.47.0 # For webcam streaming
+plotly==5.22.0
+pandas==2.2.2
+requests==2.31.0
+Pillow==10.3.0
+
+# Utilities
+python-dotenv==1.0.1
+loguru==0.7.2
+pytest==8.2.0
+httpx==0.27.0
