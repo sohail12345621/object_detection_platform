@@ -47,7 +47,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Define API URL
-API_URL = os.getenv("API_URL", "http://localhost:8000/api/v1")
+base_api_url = os.getenv("API_URL", "http://localhost:8000")
+API_URL = base_api_url if base_api_url.endswith("/api/v1") else f"{base_api_url}/api/v1"
 
 st.title("🤖 Vision AI: Object Detection & Tracking")
 st.markdown("---")

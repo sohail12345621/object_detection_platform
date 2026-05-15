@@ -1,0 +1,38 @@
+services:
+  # Backend API Service
+  - type: web
+    name: object-detection-backend
+    env: docker
+    dockerfilePath: docker/Dockerfile.backend
+    plan: free # Can be upgraded to standard/pro depending on requirements
+    region: ohio
+    envVars:
+      - key: PROJECT_NAME
+        value: AI Object Detection & Tracking Platform
+      - key: UPLOAD_DIR
+        value: /app/uploads
+      - key: OUTPUT_DIR
+        value: /app/outputs
+      - key: WEIGHTS_DIR
+        value: /app/weights
+      - key: DATABASE_URL
+        value: sqlite:////app/data/sql_app.db
+    disk:
+      name: backend-data
+      mountPath: /app/data
+      sizeGB: 1
+    
+  # Frontend Streamlit Service
+  - type: web
+    name: object-detection-frontend
+    env: docker
+    dockerfilePath: docker/Dockerfile.frontend
+    plan: free
+    region: ohio
+    envVars:
+      - key: API_URL
+        fromService:
+          type: web
+          name: object-detection-backend
+          envVarKey: RENDER_EXTERNAL_URL
+          property: value

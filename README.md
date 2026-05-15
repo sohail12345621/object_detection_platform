@@ -1,5 +1,7 @@
 # 🤖 Vision AI: Object Detection & Tracking Platform
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/sohail12345621/object_detection_platform)
+
 A production-grade AI-powered Object Detection and Tracking Platform built with Python, YOLOv8, OpenCV, FastAPI, Streamlit, and Docker. This project features a highly scalable and modular architecture suitable for real-world AI SaaS products.
 
 ## Features
