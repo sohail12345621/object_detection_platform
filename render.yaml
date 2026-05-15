@@ -17,10 +17,6 @@ services:
         value: /app/weights
       - key: DATABASE_URL
         value: sqlite:////app/data/sql_app.db
-    disk:
-      name: backend-data
-      mountPath: /app/data
-      sizeGB: 1
     
   # Frontend Streamlit Service
   - type: web
@@ -35,4 +31,3 @@ services:
           type: web
           name: object-detection-backend
           envVarKey: RENDER_EXTERNAL_URL
-          property: value
